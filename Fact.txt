@@ -1,0 +1,35 @@
+in
+call Factorial
+out
+hlt
+Factorial:
+pop rax
+push rax
+push rax
+push 1
+je RecEnd
+push rax
+push 2
+je RecEnd
+push 1
+pop rbx
+push rax
+push rbx
+mul
+call FactorialRec
+ret
+FactorialRec:
+push rbx
+push 1
+add
+pop rbx
+push rbx
+mul
+push rbx
+push 1
+add
+push rax
+jae RecEnd
+call FactorialRec
+RecEnd:
+ret

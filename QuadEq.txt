@@ -1,0 +1,81 @@
+in
+in
+in
+call SolveEquetion
+hlt
+SolveEquetion:
+pop rcx
+pop rbx
+pop rax
+push rax
+push 0
+je Linear
+jmp Square
+Linear:
+push rbx
+push 0
+jne OneSolution
+push rcx
+push 0
+je InfSolution
+jmp ZeroSolution
+InfSolution:
+push 8
+out
+ret
+Square:
+push rbx
+push rbx
+mul
+push 4
+push rax
+push rcx
+mul
+mul
+sub
+pop rdx
+push rdx
+push 0
+jae TwoSolution
+jmp ZeroSolution
+ZeroSolution:
+push 0
+out
+ret
+OneSolution:
+push 1
+out
+push 0
+push rcx
+sub
+push rbx
+div
+out
+ret
+TwoSolution:
+push 2
+out
+push rdx
+sqrt
+pop rdx
+push 0
+push rbx
+sub
+push rdx
+add
+push 2
+push rax
+mul
+div
+out
+push 0
+push rbx
+sub
+push rdx
+sub
+push 2
+push rax
+mul
+div
+out
+ret

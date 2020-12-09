@@ -1,0 +1,31 @@
+in
+call Fibonacci
+out
+hlt
+Fibonacci:
+pop rax
+push rax
+push 0
+je stop
+push rax
+push 1
+je stop
+jmp continue
+stop:
+push 1
+ret
+continue:
+push rax
+push rax
+push 1
+sub
+call Fibonacci
+pop rbx
+pop rax
+push rbx
+push rax
+push 2
+sub
+call Fibonacci
+add
+ret

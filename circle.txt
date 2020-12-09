@@ -1,0 +1,44 @@
+push 70
+pop rax
+call Circle
+hlt
+Circle:
+push 0.2
+pop rbx
+for:
+push rbx
+sin
+push 10
+mul
+pop rcx
+push rbx
+cos
+push 23
+mul
+pop rdx
+push 30
+push rcx
+sub
+rnd
+pop rcx
+push 40
+push rdx
+add
+rnd
+pop rdx
+push 80
+push rcx
+mul
+push rdx
+add
+pop rcx
+push rax
+pop [rcx]
+push rbx
+push 0.01
+add
+pop rbx
+push rbx
+push 6.3
+jne for
+ret
